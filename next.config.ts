@@ -1,7 +1,8 @@
 import type { NextConfig } from "next";
 
-const isProd = process.env.NODE_ENV === "production";
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? (isProd ? "/site" : "");
+// For personal root GitHub Pages (https://<username>.github.io), basePath is ""
+// If hosted under a sub-repository, NEXT_PUBLIC_BASE_PATH can be passed
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 const nextConfig: NextConfig = {
   output: "export",
